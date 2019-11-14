@@ -3,13 +3,14 @@ jobs:
   build_gcc_6:
     docker:
       - image: gcc:6
+    working_directory: /mio
     steps:
       - checkout
       - run: mkdir -p build && cd build
       - run: g++ -o main main.cpp -std=c++11
       - run: ./main
       - store_artifacts:
-            path: /build/main
+            path: ./build/main
             destination: ExeFile
   build_gcc_latest:
     docker:
