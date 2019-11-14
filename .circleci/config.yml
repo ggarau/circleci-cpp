@@ -10,7 +10,7 @@ jobs:
       - run: g++ -o main main.cpp -std=c++11
       - run: ./main
       - store_artifacts:
-            path:./main
+            path:main
             destination: ExeFile
   build_gcc_latest:
     docker:
